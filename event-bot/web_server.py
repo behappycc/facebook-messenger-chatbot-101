@@ -114,7 +114,19 @@ def handle_postback(sender_psid, received_postback):
     payload = received_postback['payload']
     payload_action = False
     if (payload == 'greeting'):
-        response = {"text": "Thanks!"}
+        response = {"text": "Hello!"}
+    elif (payload == 'introduction'):
+        response = reply_postback_introduction()
+    elif (payload == 'agenda'):
+        response = reply_postback_agenda()
+    elif (payload == 'traffic_information'):
+        response = reply_postback_traffic_information()
+    elif (payload == 'ticket'):
+        response = reply_postback_ticket()
+    elif (payload == 'sponsor'):
+        response = reply_postback_sponsor()
+    elif (payload == 'contact_us'):
+        response = reply_postback_contact_us()
     elif (payload == 'menu'):
         response = reply_postback_menu()
 
@@ -122,7 +134,7 @@ def handle_postback(sender_psid, received_postback):
 
 def reply_postback_menu():
     data = {
-        "text": "Here is a quick reply!",
+        "text": "Facebook Messenger 聊天機器人實作班 － 手把手教你用 Python 建立自己的第一個聊天機器人",
         "quick_replies":[
             {
                 "content_type":"text",
@@ -153,10 +165,41 @@ def reply_postback_menu():
                 "content_type":"text",
                 "title":"聯絡我們",
                 "payload":"contact_us",
+            },
+            {
+                "content_type":"text",
+                "title":"主選單",
+                "payload":"menu",
             }
         ]
     }
     return data
+
+def reply_postback_introduction():
+    data = {"text": "Hello!"}
+    return data
+
+def reply_postback_agenda():
+    data = {"text": "Hello!"}
+    return data
+
+def reply_postback_traffic_information():
+    data = {}
+    return data
+
+def reply_postback_traffic_ticket():
+    data = {}
+    return data
+
+def reply_postback_traffic_sponsor():
+    data = {}
+    return data
+
+def reply_postback_traffic_contact_us():
+    data = {}
+    return data
+
+
 
 api.add_resource(Webhook, '/webhook')
 api.add_resource(InitBot, '/init-bot')
