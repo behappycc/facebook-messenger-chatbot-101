@@ -17,7 +17,10 @@ logging.basicConfig(level=logging.INFO)
 
 def call_send_api(sender_psid, response):
     data = {
-        "recipient": {"id": sender_psid},
+        "messaging_type": "RESPONSE",
+        "recipient": {
+            "id": sender_psid
+        },
         "message": response
     }
     try:
