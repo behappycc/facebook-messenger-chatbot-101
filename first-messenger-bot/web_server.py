@@ -31,6 +31,7 @@ def call_send_api(sender_psid, response):
 
 
 def handle_message(sender_psid, received_message):
+    response = None
     if 'text' in received_message:
         response = {
             'text': received_message['text']
