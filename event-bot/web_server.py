@@ -6,10 +6,10 @@ from flask import Flask, request, Response
 from flask_restful import Resource, Api
 
 
-PAGE_ACCESS_TOKEN = '<PAGE_ACCESS_TOKEN>'
+PAGE_ACCESS_TOKEN = 'EAAWdYsDjndwBAEzWb7yeeArLLfj5SJeoXSnDAcS6suBkKCvV3Jw4mdNorJmVAX4YJd8OVpiXtU17kpZAJUslV9w721Ps8ySZAb1I1w91Wffr14uNxXLA98fmsmg4HV0oDrcNJB4aKMTzQDK9YYqLtZAZBTu3gFgQDPrUXbk0UOX3eI51huPh'
 API_URL = 'https://graph.facebook.com/'
 API_VERSION = 'v3.2'
-VERIFY_TOKEN = '<VERIFY_TOKEN>'
+VERIFY_TOKEN = '12345678'
 
 app = Flask(__name__)
 api = Api(app)
@@ -68,11 +68,18 @@ def call_send_api(sender_psid, response):
 
 def set_welcome_screen():
     data = {
+        "whitelisted_domains": [
+            "https://behappycc.github.io/"
+        ],
         "get_started": {"payload": "greeting"},
         "greeting": [
             {
-            "locale":"default",
-            "text":"Facebook Messenger 聊天機器人實作班" 
+                "locale": "default",
+                "text": "Facebook Messenger Chatbot Workshop" 
+            },
+            {
+                "locale": "zh_TW",
+                "text": "Facebook Messenger 聊天機器人實作班" 
             }
         ]
     }
