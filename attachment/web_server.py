@@ -84,8 +84,16 @@ def set_messenger_profile():
         "greeting": [
             {
                 "locale": "default",
+                "text": "多元成家範例" 
+            },
+            {
+                "locale": "en_US",
+                "text": "multiple message demo" 
+            },
+            {
+                "locale": "zh_TW",
                 "text": "多元訊息範例" 
-            }
+            },
         ],
         "persistent_menu": [
             {
@@ -95,6 +103,27 @@ def set_messenger_profile():
                         'title': '範例列表',
                         'type': 'postback',
                         'payload': 'menu'
+                    },
+                    {
+                        'title': '購票',
+                        'type': 'web_url',
+                        'url': 'https://tenlong.kktix.cc/events/facebook-messenger-chatbot-101'
+                    },
+                    {
+                        "title": "相關連結",
+                        "type": "nested",
+                        "call_to_actions":[
+                            {
+                                'title': '松果城市',
+                                'type': 'web_url',
+                                'url': 'https://www.pycone.com/'
+                            },
+                            {
+                                'title': '天瓏書局',
+                                'type': 'web_url',
+                                'url': 'https://www.tenlong.com.tw/'
+                            }
+                        ]
                     }
                 ]
             }
@@ -144,7 +173,7 @@ quick_replies = [
         "payload": "list",
     },
     {
-        "content_type":"location"
+        "content_type": "location"
     },
     {
         "content_type":"user_phone_number"

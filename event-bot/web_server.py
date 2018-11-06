@@ -6,10 +6,10 @@ from flask import Flask, request, Response
 from flask_restful import Resource, Api
 
 
-PAGE_ACCESS_TOKEN = 'EAAWdYsDjndwBAEzWb7yeeArLLfj5SJeoXSnDAcS6suBkKCvV3Jw4mdNorJmVAX4YJd8OVpiXtU17kpZAJUslV9w721Ps8ySZAb1I1w91Wffr14uNxXLA98fmsmg4HV0oDrcNJB4aKMTzQDK9YYqLtZAZBTu3gFgQDPrUXbk0UOX3eI51huPh'
+PAGE_ACCESS_TOKEN = '<PAGE_ACCESS_TOKEN>'
 API_URL = 'https://graph.facebook.com/'
 API_VERSION = 'v3.2'
-VERIFY_TOKEN = '12345678'
+VERIFY_TOKEN = '<VERIFY_TOKEN>'
 
 app = Flask(__name__)
 api = Api(app)
