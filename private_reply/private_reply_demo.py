@@ -8,7 +8,7 @@ from flask_restful import Resource, Api
 PAGE_ACCESS_TOKEN = '<PAGE_ACCESS_TOKEN>'
 API_URL = 'https://graph.facebook.com/'
 API_VERSION = 'v3.2'
-VERIFY_TOKEN = '<PAGE_ACCESS_TOKEN>'
+VERIFY_TOKEN = '<VERIFY_TOKEN>'
 
 event_post_id = "<POST_ID>"
 signal = "<COMMENT>"
@@ -68,7 +68,7 @@ def handle_comment(entry):
     print("check +1")
     message = entry['changes'][0]['value']['message']
 
-    if message != signal:
+    if signal!="" and signal!=message:
         return
 
     sender_id = entry['changes'][0]['value']['from']['id']
